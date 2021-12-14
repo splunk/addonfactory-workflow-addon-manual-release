@@ -5,7 +5,7 @@ on:
       GH_TOKEN_ADMIN:
         description: Github admin token
         required: true
-      GITHUB_TOKEN:
+      GH_TOKEN:
         description: Github token
         required: true
 
@@ -117,14 +117,14 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.GH_TOKEN }}"
           prerelease: false
           automatic_release_tag: v${{ github.event.inputs.tag }}
       - name: Release on github (pre-release)
         if: github.ref == 'refs/heads/develop'
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.GH_TOKEN }}"
           prerelease: true
           automatic_release_tag: v${{ github.event.inputs.tag }}
       - name: Download package-deployment
