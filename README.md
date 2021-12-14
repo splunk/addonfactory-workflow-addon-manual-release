@@ -1,2 +1,2 @@
-# reusable-workflow-build-test-release
+# reusable-workflow-publish-manual
 Repository to store reusable publish-manual workflow
