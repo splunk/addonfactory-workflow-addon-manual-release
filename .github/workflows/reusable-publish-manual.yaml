@@ -10,18 +10,18 @@ on:
         required: true
 
 jobs:
-  validate_branch:
-    name: validate_branch
-    runs-on: ubuntu-latest
-    steps:
-      - name: validate_branch
-        if: github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/main'
-        run: |
-          echo "Skipping publish as branch is neither main nor develop"
+  # validate_branch:
+  #   name: validate_branch
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: validate_branch
+  #       if: github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/main'
+  #       run: |
+  #         echo "Skipping publish as branch is neither main nor develop"
   build:
-    needs:
-      - validate_branch
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+    # needs:
+    #   - validate_branch
+    # if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     name: build
     runs-on: ubuntu-latest
     steps:
@@ -112,8 +112,8 @@ jobs:
   publish:
     needs:
       - build
-      - validate_branch
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+    #   - validate_branch
+    # if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
