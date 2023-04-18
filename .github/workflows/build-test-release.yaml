@@ -10,8 +10,13 @@ on:
   pull_request:
     branches: [main, develop]
 
-jobs:
+permissions:
+  contents: write
+  packages: read
+  pull-requests: read
+  statuses: write
 
+jobs:
   compliance-copyrights:
     name: Compliance Copyright Headers
     runs-on: ubuntu-latest
