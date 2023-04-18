@@ -9,6 +9,10 @@ on:
         description: Github token
         required: true
 
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   validate_branch:
     name: validate_branch
