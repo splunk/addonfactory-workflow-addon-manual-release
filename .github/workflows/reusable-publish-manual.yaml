@@ -92,19 +92,19 @@ jobs:
         with:
           source: ${{ steps.uccgen.outputs.OUTPUT }}
       - name: artifact-splunk-unpacked
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: package-raw
           path: ${{ steps.uccgen.outputs.OUTPUT }}**
         if: always()
       - name: artifact-splunk-base
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: package-splunkbase
           path: ${{ steps.slim.outputs.OUTPUT }}
         if: always()
       - name: artifact-splunk-parts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: package-deployment
           path: build/package/deployment**
