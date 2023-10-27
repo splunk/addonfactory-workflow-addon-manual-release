@@ -83,7 +83,7 @@ jobs:
           PrNumber: ${{ github.event.number }}
       - name: Build Package
         id: uccgen
-        uses: splunk/addonfactory-ucc-generator-action@v1
+        uses: splunk/addonfactory-ucc-generator-action@v2
         with:
           version: ${{ steps.BuildVersion.outputs.VERSION }}
       - name: Slim Package
