@@ -35,7 +35,7 @@ jobs:
           # build if this is not set false
           persist-credentials: false
       - name: Setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.7
       - name: create requirements file for pip
