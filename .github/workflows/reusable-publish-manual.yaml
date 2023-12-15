@@ -92,19 +92,19 @@ jobs:
         with:
           source: ${{ steps.uccgen.outputs.OUTPUT }}
       - name: artifact-splunk-unpacked
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: package-raw
           path: ${{ steps.uccgen.outputs.OUTPUT }}**
         if: always()
       - name: artifact-splunk-base
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: package-splunkbase
           path: ${{ steps.slim.outputs.OUTPUT }}
         if: always()
       - name: artifact-splunk-parts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: package-deployment
           path: build/package/deployment**
@@ -142,13 +142,13 @@ jobs:
           prerelease: true
           automatic_release_tag: v${{ github.event.inputs.tag }}
       - name: Download package-deployment
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         id: download-package-deployment
         with:
           name: package-deployment
           path: download/artifacts/
       - name: Download package-splunkbase
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         id: download-package-splunkbase
         with:
           name: package-splunkbase
